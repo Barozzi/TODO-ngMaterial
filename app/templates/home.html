@@ -1,0 +1,27 @@
+<div class=container ng-controller='TodoCtrl'>
+  <md-whiteframe class="md-whiteframe-z2" layout layout-align="column">
+    <md-toolbar class="dark-primary-color">
+      <label class="md-toolbar-tools dark-primary-color">
+        <span class=myTools>{{remaining()}} of {{todos.length}} remaining</span><span> <md-button class="accent-color" ng-click="archive()">[ archive ]</md-buton></span>
+      </label>
+    </md-toolbar>
+  </md-whiteframe>
+   <md-divider></md-divider>
+    <md-list-item ng-repeat="todo in todos">
+
+      <md-checkbox class="md-primary" type="checkbox" ng-model="todo.done" ng-click="toggle(item, selected)">
+      </md-checkbox>
+       <span class="done-{{todo.done}}">{{todo.text}}</span>
+    </md-list-item>
+
+  <form ng-submit="addTodo()">
+    <md-input-container flex>
+      <label>add new todo here</label>
+      <input ng-model="todoText">
+    </md-input-container>
+    <md-button class="accent-color" type="submit" value="add">Add</md-button>
+  </form>
+
+</div>
+
+</div>
